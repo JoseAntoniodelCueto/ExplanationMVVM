@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyFirstMVVM.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,10 +20,14 @@ namespace MyFirstMVVM
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
+    {        
         public MainWindow()
         {
             InitializeComponent();
-        }
+
+            //Añadimos el contexto de Datos para que Vista y ViewModel se encuentren conectados
+            var vm = new MainViewModel();            
+            DataContext = vm;
+        }        
     }
 }
