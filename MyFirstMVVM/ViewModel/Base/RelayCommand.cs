@@ -47,7 +47,7 @@ namespace MyFirstMVVM.ViewModel.Base
 
         public void Execute(object parameter)
         {
-            _action.Invoke((T)parameter);
+            _action.Invoke((T)Convert.ChangeType(parameter, typeof(T)));
         }
     }
 }
