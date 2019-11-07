@@ -14,12 +14,7 @@
             <!--Mediante la palabra clave Binding podemos asociar Propiedades del Contexto de Datos
             (ViewModel) siendo el mismo nombre en ambos sitios-->
 
-            <control:LabelAndTextBox/>
-            <control:LabelAndTextBox/>
-            <control:LabelAndTextBox LabelColor="Red"/>
-
-
-
+            
             <Button x:Name="Button1" Content="Press ME" Height="100" 
                     Command="{Binding CheckTextGreetingsCommand}"/>
 

@@ -1,4 +1,5 @@
-﻿using MyFirstMVVM.ViewModel.Base;
+﻿using MyFirstMVVM.Model;
+using MyFirstMVVM.ViewModel.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace MyFirstMVVM.ViewModel
         
         private RelayCommand<string> _insertNumberCommand;
         public ICommand InsertNumberCommand => _insertNumberCommand;
-
+        
         public MainViewModel()
         {            
             _checkTextGreetingsCommand = new RelayCommand(PerformCheckText);
