@@ -17,19 +17,19 @@ namespace MyFirstMVVM.ViewModel
         //Y la interfaz será publica, ya que es el mínimo exponente necesario para su uso.
         private RelayCommand _checkTextGreetingsCommand;
         public ICommand CheckTextGreetingsCommand => _checkTextGreetingsCommand;
-
-        private RelayCommand<int> _insertNumberCommand;
+        
+        private RelayCommand<string> _insertNumberCommand;
         public ICommand InsertNumberCommand => _insertNumberCommand;
 
         public MainViewModel()
-        {
+        {            
             _checkTextGreetingsCommand = new RelayCommand(PerformCheckText);
-            _insertNumberCommand = new RelayCommand<int>(PerformInsertNumber);
+            _insertNumberCommand = new RelayCommand<string>(PerformInsertNumber);
         }
 
-        private void PerformInsertNumber(int obj)
+        private void PerformInsertNumber(string obj)
         {
-            TextGreetings += obj.ToString();            
+            TextGreetings += obj;            
         }
 
         private void PerformCheckText()

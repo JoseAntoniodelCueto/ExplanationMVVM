@@ -1,8 +1,8 @@
-﻿using MyFirstMVVM.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,20 +14,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MyFirstMVVM
+namespace MyFirstMVVM.Control
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for LabelAndTextBox.xaml
     /// </summary>
-    public partial class MainWindow : Window
-    {        
-        public MainWindow()
-        {
+    public partial class LabelAndTextBox : UserControl
+    {
+        
+        public LabelAndTextBox()
+        {            
             InitializeComponent();
+        }
 
-            //Añadimos el contexto de Datos para que Vista y ViewModel se encuentren conectados
-            var vm = new MainViewModel();            
-            DataContext = vm;                        
-        }        
+        public Brush LabelColor
+        {
+            get => LabelTitle.Foreground;
+            set => LabelTitle.Foreground = value;
+        }
     }
 }
