@@ -1,4 +1,5 @@
 ﻿using MyFirstMVVM.Model;
+using MyFirstMVVM.Services;
 using MyFirstMVVM.ViewModel.Base;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ using System.Windows.Input;
 namespace MyFirstMVVM.ViewModel
 {
     public class ListExplanationViewModel : BaseViewModel
-    {
+    {        
         private RelayCommand _commandChangeName;
         public ICommand CommandChangeName => _commandChangeName;
 
@@ -33,7 +34,7 @@ namespace MyFirstMVVM.ViewModel
         }
 
         public ListExplanationViewModel()
-        {
+        {            
             LoadPeople();
             InitCommands();
         }
@@ -56,12 +57,8 @@ namespace MyFirstMVVM.ViewModel
 
         private void LoadPeople()
         {
-            _people = new ObservableCollection<Person>()
-            {
-                new Person() { Name = "Paco"},
-                new Person() { Name = "Maria"},
-                new Person() { Name = "Federico"},
-            };
+            _people = 
+                new ObservableCollection<Person>(PeopleInstance.Instance.GetPeople());
         }
     }
 }
