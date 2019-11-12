@@ -16,7 +16,7 @@ namespace MyFirstMVVM.Services
             {
                 if (_instance == null)
                 {
-                    _instance = new HttpPeopleService();
+                    _instance = new DummyPeopleService();
                 }
                 return _instance;
             }
