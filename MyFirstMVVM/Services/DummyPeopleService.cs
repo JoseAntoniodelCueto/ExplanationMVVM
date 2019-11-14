@@ -13,9 +13,9 @@ namespace MyFirstMVVM.Services
         {
             return new List<Person>()
             {
-                new Person() { Name = "Paco"},
-                new Person() { Name = "Maria"},
-                new Person() { Name = "Federico"},
+                new Person() { Name = "Paco", Sex = EnumSex.Male},
+                new Person() { Name = "Maria", Sex = EnumSex.Female},
+                new Person() { Name = "Federico", Sex = EnumSex.Male},
             };
         }
     }

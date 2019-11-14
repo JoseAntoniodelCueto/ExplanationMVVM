@@ -18,7 +18,7 @@
             <Button x:Name="Button1" Content="Press ME" Height="100" 
                     Command="{Binding CheckTextGreetingsCommand}"/>
 
-            <Label Content="{Binding TextGreetings}"/>
+            <Label Content="{Binding TextGreetings}" Style="{StaticResource LabelStandard}"/>
 
             <StackPanel Orientation="Horizontal">
                 <StackPanel>

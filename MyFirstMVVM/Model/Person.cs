@@ -21,6 +21,8 @@ namespace MyFirstMVVM.Model
                 //RaiseProperty();
             }
         }
+
+        public EnumSex Sex { get; set; }
         public string ImageUrl { get; set; }        
     }
 }

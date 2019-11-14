@@ -25,10 +25,6 @@ namespace MyFirstMVVM.View
             InitializeComponent();
             DataContext = new ListExplanationViewModel();
         }
-
-        private void ComboBox_Selected(object sender, RoutedEventArgs e)
-        {
-            (DataContext as ListExplanationViewModel).CommandChangeName.Execute(null);
-        }
+        
     }
 }

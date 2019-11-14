@@ -29,20 +29,21 @@
         <ComboBox Grid.Column="0" ItemsSource="{Binding People}"
                   Margin="16,0,0,0" SelectedIndex="{Binding PersonIndex}" 
                   SelectedItem="{Binding SelectedPerson}"
-                  VerticalAlignment="Top"
-                  Selected="ComboBox_Selected">
+                  VerticalAlignment="Top">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <Image Source="{Binding ImageUrl}"/>
                         <Label Content="{Binding Name}"/>
+                        <Label Content="{Binding Sex}"/>
                     </StackPanel>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
 
         <StackPanel Grid.Column="1">
-            <Button Command="{Binding CommandChangeName}" Height="50"/>
+            <Button Command="{Binding CommandChangeName}" Height="50"
+                    Visibility="{Binding PersonIndex, Converter={StaticResource VisibleToBool}}"/>
             <Button Command="{Binding CommandAddNewElement}" Height="50"/>
         </StackPanel>
     </Grid>

@@ -75,6 +75,9 @@
       <DependentUpon>LabelAndTextBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Control\TextBoxEnter.cs" />
+    <Compile Include="Converters\EnumSexToStringValueConverter.cs" />
+    <Compile Include="Converters\VisibleToBoolValueConverter.cs" />
+    <Compile Include="Model\EnumSex.cs" />
     <Compile Include="Model\Person.cs" />
     <Compile Include="Services\HttpPeopleService.cs" />
     <Compile Include="Services\IPeopleService.cs" />

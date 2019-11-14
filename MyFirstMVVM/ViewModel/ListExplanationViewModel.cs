@@ -60,7 +60,7 @@ namespace MyFirstMVVM.ViewModel
                 RaiseProperty();
             }
         }
-
+        
         public ListExplanationViewModel()
         {            
             LoadPeople();
