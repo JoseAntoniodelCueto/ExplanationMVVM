@@ -19,15 +19,26 @@ namespace MyFirstMVVM
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
-    {        
+    public partial class MainWindow 
+    {
+        private MainViewModel vm;
         public MainWindow()
         {
             InitializeComponent();
 
             //Añadimos el contexto de Datos para que Vista y ViewModel se encuentren conectados
-            var vm = new MainViewModel();            
+            vm = new MainViewModel();            
             DataContext = vm;                        
-        }        
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            vm.OnLoad();
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            vm.OnClosed();
+        }
     }
 }

@@ -28,7 +28,7 @@ namespace MyFirstMVVM.Services
             var vm = Activator.CreateInstance<T>();
 
             view.DataContext = vm;
-            view.Show();
+            view.Show();            
         }
     }
 }

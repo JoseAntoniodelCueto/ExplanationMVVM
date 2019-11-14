@@ -59,6 +59,11 @@ namespace MyFirstMVVM.ViewModel
                 //propiedad se ha visto modificada, para que todos los interesados puedan consultar su valor.
                 RaiseProperty();
             }
-        }        
+        }
+
+        public override void OnLoad()
+        {
+            base.OnLoad();
+        }
     }
 }

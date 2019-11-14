@@ -14,6 +14,12 @@ namespace MyFirstMVVM.ViewModel.Base
         public void RaiseProperty([CallerMemberName] string propertyName = "")
         {            
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));            
-        }        
+        }
+
+        public virtual void OnLoad()
+        { }
+
+        public virtual void OnClosed()
+        { }
     }
 }
