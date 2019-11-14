@@ -1,4 +1,5 @@
-﻿using MyFirstMVVM.ViewModel;
+﻿using MyFirstMVVM.Services;
+using MyFirstMVVM.ViewModel;
 using MyFirstMVVM.ViewModel.Services;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace MyFirstMVVM.View
         public ListExplanation()
         {
             InitializeComponent();
-            DataContext = new ListExplanationViewModel(Locator.Get<INavigationService>());
+            DataContext = new ListExplanationViewModel(Locator.Get<IPeopleService>());
         }
         
     }

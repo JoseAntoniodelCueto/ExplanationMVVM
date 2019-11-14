@@ -15,6 +15,7 @@ namespace MyFirstMVVM.ViewModel
     public class ListExplanationViewModel : BaseViewModel
     {
         private readonly INavigationService _navigationService;
+        private readonly IPeopleService _peopleService;
 
         private RelayCommand _commandChangeName;
         public ICommand CommandChangeName => _commandChangeName;
@@ -25,8 +26,8 @@ namespace MyFirstMVVM.ViewModel
         public ICommand SelectedPersonCommand => _selectedPersonCommand;
         
         public ICommand CommandAddNewElement => _commandAddNewElement;
-        
-        private ObservableCollection<Person> _people;
+
+        private ObservableCollection<Person> _people = new ObservableCollection<Person>();
 
         public ObservableCollection<Person> People
         {
@@ -64,11 +65,17 @@ namespace MyFirstMVVM.ViewModel
             }
         }
         
-        public ListExplanationViewModel(INavigationService navigation)
+        public ListExplanationViewModel(IPeopleService peopleService)
         {
             _navigationService = Locator.Get<INavigationService>();
-            LoadPeople();
+            _peopleService = peopleService;
             InitCommands();
+        }
+
+        public override void OnLoad()
+        {
+            LoadPeople();
+            base.OnLoad();
         }
 
         private void InitCommands()
@@ -109,7 +116,7 @@ namespace MyFirstMVVM.ViewModel
         private void LoadPeople()
         {
             _people = 
-                new ObservableCollection<Person>(PeopleInstance.Instance.GetPeople());
+                new ObservableCollection<Person>(_peopleService.GetPeople());
         }
     }
 }

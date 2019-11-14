@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFirstMVVM", "MyFirstMVVM\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFirstMVVM.ViewModel", "MyFirstMVVM.ViewModel\MyFirstMVVM.ViewModel.csproj", "{2FD222DC-423C-44B8-A32B-FF83CC7E8507}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFirstMVVM.Test", "MyFirstMVVM.Test\MyFirstMVVM.Test.csproj", "{4B921E37-EEEE-4F6D-B4F6-750E20046B70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2FD222DC-423C-44B8-A32B-FF83CC7E8507}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FD222DC-423C-44B8-A32B-FF83CC7E8507}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FD222DC-423C-44B8-A32B-FF83CC7E8507}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B921E37-EEEE-4F6D-B4F6-750E20046B70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B921E37-EEEE-4F6D-B4F6-750E20046B70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B921E37-EEEE-4F6D-B4F6-750E20046B70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B921E37-EEEE-4F6D-B4F6-750E20046B70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
