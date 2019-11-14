@@ -78,6 +78,7 @@
     <Compile Include="Converters\EnumSexToStringValueConverter.cs" />
     <Compile Include="Converters\VisibleToBoolValueConverter.cs" />
     <Compile Include="Services\NavigationService.cs" />
+    <Compile Include="Services\NotificationService.cs" />
     <Compile Include="View\BaseView.cs" />
     <Compile Include="View\ListExplanation.xaml.cs">
       <DependentUpon>ListExplanation.xaml</DependentUpon>

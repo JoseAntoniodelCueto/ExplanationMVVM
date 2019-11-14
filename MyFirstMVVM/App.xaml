@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:MyFirstMVVM"
              xmlns:conv="clr-namespace:MyFirstMVVM.Converters"
-             StartupUri="View/ListExplanation.xaml">
+             StartupUri="View/MainWindow.xaml">
     <Application.Resources>
         <Style x:Key="LabelStandard" TargetType="Label">
             <Setter Property="FontSize" Value="32"/>

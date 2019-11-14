@@ -48,6 +48,7 @@
     <Compile Include="Services\DummyPeopleService.cs" />
     <Compile Include="Services\HttpPeopleService.cs" />
     <Compile Include="Services\INavigationService.cs" />
+    <Compile Include="Services\INotificationService.cs" />
     <Compile Include="Services\IPeopleService.cs" />
     <Compile Include="Services\NavigationImplentation.cs" />
     <Compile Include="Services\PeopleInstance.cs" />

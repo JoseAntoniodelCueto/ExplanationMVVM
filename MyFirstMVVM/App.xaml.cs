@@ -18,6 +18,7 @@ namespace MyFirstMVVM
     {        
         protected override void OnStartup(StartupEventArgs e)
         {
+            Locator.Register<INotificationService>(new NotificationService());
             Locator.Register<INavigationService>(new NavigationService());
             base.OnStartup(e);
         }

@@ -1,5 +1,6 @@
 ﻿using MyFirstMVVM.Model;
 using MyFirstMVVM.ViewModel.Base;
+using MyFirstMVVM.ViewModel.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,8 @@ namespace MyFirstMVVM.ViewModel
     //Heredamos el BaseViewModel con la intención de obtener todas las funcionalidades básicas para el ViewModel
     public class MainViewModel : BaseViewModel
     {
-                
+
+        private readonly INotificationService _notificationService;
         //Cuando creamos un comando, creamos el campo privado de la implementación de ICommand, en este caso RelayCommand.
         //Y la interfaz será publica, ya que es el mínimo exponente necesario para su uso.
         private RelayCommand _checkTextGreetingsCommand;
@@ -23,7 +25,8 @@ namespace MyFirstMVVM.ViewModel
         public ICommand InsertNumberCommand => _insertNumberCommand;
         
         public MainViewModel()
-        {            
+        {
+            _notificationService = Locator.Get<INotificationService>();
             _checkTextGreetingsCommand = new RelayCommand(PerformCheckText);
             _insertNumberCommand = new RelayCommand<string>(PerformInsertNumber);
         }
@@ -37,13 +40,11 @@ namespace MyFirstMVVM.ViewModel
         {
             if(_textGreetings == "Hello World")
             {
-                //TODO: Create NavigationService
-                //MessageBox.Show("Bien!");
+                _notificationService?.ShowMessage(string.Empty, "Holi");
             }
             else
             {
-                //TODO: Create NavigationService
-                //MessageBox.Show("Mal");
+                _notificationService?.ShowMessage(string.Empty, "NoHoli");
             }
         }
 

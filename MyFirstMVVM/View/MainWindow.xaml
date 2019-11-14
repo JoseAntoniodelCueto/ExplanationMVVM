@@ -9,8 +9,8 @@
         xmlns:local="clr-namespace:MyFirstMVVM"
         mc:Ignorable="d"
         x:TypeArguments="vm:MainViewModel"
-        Title="MainWindow" Height="450" Width="800"
-        Loaded="Window_Loaded" Closed="Window_Closed">
+        Title="MainWindow" Height="450" Width="800">
+
 
     <Grid>
         <StackPanel Orientation="Horizontal">
