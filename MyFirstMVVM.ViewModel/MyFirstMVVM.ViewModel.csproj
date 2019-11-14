@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Locator.cs" />
     <Compile Include="Model\EnumSex.cs" />
     <Compile Include="Model\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -48,6 +49,7 @@
     <Compile Include="Services\HttpPeopleService.cs" />
     <Compile Include="Services\INavigationService.cs" />
     <Compile Include="Services\IPeopleService.cs" />
+    <Compile Include="Services\NavigationImplentation.cs" />
     <Compile Include="Services\PeopleInstance.cs" />
     <Compile Include="ViewModel\Base\BaseViewModel.cs" />
     <Compile Include="ViewModel\Base\RelayCommand.cs" />

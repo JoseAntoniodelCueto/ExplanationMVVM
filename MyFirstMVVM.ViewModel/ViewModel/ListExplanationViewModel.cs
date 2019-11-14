@@ -13,7 +13,9 @@ using System.Windows.Input;
 namespace MyFirstMVVM.ViewModel
 {
     public class ListExplanationViewModel : BaseViewModel
-    {        
+    {
+        private readonly INavigationService _navigationService;
+
         private RelayCommand _commandChangeName;
         public ICommand CommandChangeName => _commandChangeName;
 
@@ -23,10 +25,7 @@ namespace MyFirstMVVM.ViewModel
         public ICommand SelectedPersonCommand => _selectedPersonCommand;
         
         public ICommand CommandAddNewElement => _commandAddNewElement;
-
-        private INavigationService _navigationService;
-
-
+        
         private ObservableCollection<Person> _people;
 
         public ObservableCollection<Person> People
@@ -64,8 +63,9 @@ namespace MyFirstMVVM.ViewModel
             }
         }
         
-        public ListExplanationViewModel()
-        {            
+        public ListExplanationViewModel(INavigationService navigation)
+        {
+            _navigationService = Locator.Get<INavigationService>();
             LoadPeople();
             InitCommands();
         }

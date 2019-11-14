@@ -37,11 +37,13 @@ namespace MyFirstMVVM.ViewModel
         {
             if(_textGreetings == "Hello World")
             {
-                MessageBox.Show("Bien!");
+                //TODO: Create NavigationService
+                //MessageBox.Show("Bien!");
             }
             else
             {
-                MessageBox.Show("Mal");
+                //TODO: Create NavigationService
+                //MessageBox.Show("Mal");
             }
         }
 
