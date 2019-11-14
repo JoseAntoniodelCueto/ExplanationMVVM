@@ -47,6 +47,7 @@ namespace MyFirstMVVM.ViewModel
             {
                 _personIndex = value;
                 RaiseProperty();
+                _commandChangeName.RaiseCanExecute();
             }
         }
 
@@ -72,9 +73,21 @@ namespace MyFirstMVVM.ViewModel
 
         private void InitCommands()
         {
-            _commandChangeName = new RelayCommand(PerformChangeName);
+            _commandChangeName = new RelayCommand(PerformChangeName, CanExecuteChangeName);
             _commandAddNewElement = new RelayCommand(PerformAddNewElement);
             _selectedPersonCommand = new RelayCommand<Person>(PerformSelectedPerson);
+        }
+
+        private bool CanExecuteChangeName()
+        {
+            if(PersonIndex >= 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private void PerformSelectedPerson(Person obj)

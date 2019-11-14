@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using System.Windows.Input;
 
 namespace MyFirstMVVM.ViewModel.Base
@@ -9,18 +10,32 @@ namespace MyFirstMVVM.ViewModel.Base
 
     public class RelayCommand : ICommand
     {
-        private Action _action;        
+        private Action _action;
+        private Func<bool> _canExecuteAction;
 
-        public RelayCommand(Action action)
+        public RelayCommand(Action action, Func<bool> canExecuteAction = null)
         {
             _action = action;
+            _canExecuteAction = canExecuteAction;
         }
 
         public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
         {
-            return true;
+            if(_canExecuteAction != null)
+            {
+                return  _canExecuteAction.Invoke();
+            }
+            else
+            {
+                return true;
+            }            
+        }
+
+        public void RaiseCanExecute()
+        {
+            CanExecuteChanged?.Invoke(this, new EventArgs());
         }
 
         public void Execute(object parameter)

@@ -42,9 +42,11 @@
         </ComboBox>
 
         <StackPanel Grid.Column="1">
-            <Button Command="{Binding CommandChangeName}" Height="50"
-                    Visibility="{Binding PersonIndex, Converter={StaticResource VisibleToBool}}"/>
-            <Button Command="{Binding CommandAddNewElement}" Height="50"/>
+            <Button Content="Change name" 
+                    Command="{Binding CommandChangeName}" Height="50"
+                    Visibility="{Binding PersonIndex}"/>
+            <Button Content="Add new element" 
+                    Command="{Binding CommandAddNewElement}" Height="50"/>
         </StackPanel>
     </Grid>
 </Window>
