@@ -18,6 +18,9 @@ namespace MyFirstMVVM.ViewModel
 
         private RelayCommand _commandAddNewElement;
 
+        private RelayCommand<Person> _selectedPersonCommand;
+        public ICommand SelectedPersonCommand => _selectedPersonCommand;
+        
         public ICommand CommandAddNewElement => _commandAddNewElement;
 
 
@@ -33,6 +36,31 @@ namespace MyFirstMVVM.ViewModel
             }
         }
 
+        private int _personIndex;
+
+        public int PersonIndex
+        {
+            get => _personIndex;
+            set
+            {
+                _personIndex = value;
+                RaiseProperty();
+            }
+        }
+
+        private Person _selectedPerson;
+
+        public Person SelectedPerson
+        {
+            get => _selectedPerson;
+            set
+            {
+                _selectedPerson = value;
+                SelectedPersonCommand.Execute(_selectedPerson);
+                RaiseProperty();
+            }
+        }
+
         public ListExplanationViewModel()
         {            
             LoadPeople();
@@ -43,6 +71,12 @@ namespace MyFirstMVVM.ViewModel
         {
             _commandChangeName = new RelayCommand(PerformChangeName);
             _commandAddNewElement = new RelayCommand(PerformAddNewElement);
+            _selectedPersonCommand = new RelayCommand<Person>(PerformSelectedPerson);
+        }
+
+        private void PerformSelectedPerson(Person obj)
+        {
+            //TODO: Do something with person
         }
 
         private void PerformAddNewElement()
