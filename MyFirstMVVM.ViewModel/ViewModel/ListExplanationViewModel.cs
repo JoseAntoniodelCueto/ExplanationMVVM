@@ -1,6 +1,7 @@
 ﻿using MyFirstMVVM.Model;
 using MyFirstMVVM.Services;
 using MyFirstMVVM.ViewModel.Base;
+using MyFirstMVVM.ViewModel.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,6 +23,8 @@ namespace MyFirstMVVM.ViewModel
         public ICommand SelectedPersonCommand => _selectedPersonCommand;
         
         public ICommand CommandAddNewElement => _commandAddNewElement;
+
+        private INavigationService _navigationService;
 
 
         private ObservableCollection<Person> _people;
@@ -87,6 +90,7 @@ namespace MyFirstMVVM.ViewModel
         private void PerformChangeName()
         {
             _people[0].Name = "Francisco";
+            _navigationService.Show<MainViewModel>();            
         }
 
         private void LoadPeople()
